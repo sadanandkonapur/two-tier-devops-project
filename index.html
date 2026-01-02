@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Tier DevOps Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        .architecture {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .architecture pre {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature h3 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: scale(1.05);
+        }
+        
+        .btn-secondary {
+            background: #48bb78;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #38a169;
+            transform: scale(1.05);
+        }
+        
+        .btn-outline {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .tech {
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .code-block code {
+            font-family: 'Courier New', monospace;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .alert-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Two-Tier DevOps Project</h1>
+            <p class="subtitle">Production-Ready Containerized Application with CI/CD Pipeline</p>
+        </header>
+        
+        <div class="content">
+            <div class="alert">
+                <div class="alert-title">⚠️ Important Note</div>
+                <p>This is a Flask Python application that requires a server to run. It cannot run directly on GitHub Pages (which only hosts static HTML). To use this application, you need to deploy it on AWS EC2, Azure VM, or any cloud server.</p>
+            </div>
+            
+            <h2>📖 About This Project</h2>
+            <p>A complete two-tier DevOps application demonstrating modern infrastructure practices including containerization, orchestration, and CI/CD automation.</p>
+            
+            <div class="architecture">
+                <h3>🏗️ Architecture</h3>
+                <pre>
+┌─────────────────────────────────────────┐
+│          Web Tier (Flask)               │
+│     - REST API endpoints                │
+│     - Web interface                     │
+│     - Port: 5000                        │
+└───────────────┬─────────────────────────┘
+                │
+                │ Database Connection
+                ▼
+┌─────────────────────────────────────────┐
+│       Database Tier (SQLite/MySQL)      │
+│     - Data persistence                  │
+│     - Automatic initialization          │
+└─────────────────────────────────────────┘
+                </pre>
+            </div>
+            
+            <h2>✨ Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🐳</div>
+                    <h3>Containerization</h3>
+                    <p>Dockerized application for consistent deployment across environments</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>CI/CD Pipeline</h3>
+                    <p>Automated Jenkins pipeline for build, test, and deployment</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>REST API</h3>
+                    <p>RESTful endpoints for data operations with JSON responses</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🗄️</div>
+                    <h3>Database</h3>
+                    <p>Auto-initializing database with sample data</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Security</h3>
+                    <p>Trivy vulnerability scanning integrated in pipeline</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Monitoring</h3>
+                    <p>Health checks and logging for production readiness</p>
+                </div>
+            </div>
+            
+            <h2>🛠️ Technology Stack</h2>
+            <div class="tech-stack">
+                <span class="tech">Python</span>
+                <span class="tech">Flask</span>
+                <span class="tech">Docker</span>
+                <span class="tech">Docker Compose</span>
+                <span class="tech">Jenkins</span>
+                <span class="tech">SQLite / MySQL</span>
+                <span class="tech">Nginx</span>
+                <span class="tech">AWS EC2</span>
+            </div>
+            
+            <h2>🚀 Quick Start</h2>
+            
+            <h3>Option 1: Run Locally (Without Docker)</h3>
+            <div class="code-block">
+                <code># Clone repository
+git clone https://github.com/sadanandkonapur/two-tier-devops-project.git
+cd two-tier-devops-project/app
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run application
+python app.py
+
+# Access at http://localhost:5000</code>
+            </div>
+            
+            <h3>Option 2: Run with Docker</h3>
+            <div class="code-block">
+                <code># Clone repository
+git clone https://github.com/sadanandkonapur/two-tier-devops-project.git
+cd two-tier-devops-project
+
+# Start with Docker Compose
+docker compose up -d
+
+# Access at http://localhost:5000</code>
+            </div>
+            
+            <h3>Option 3: Deploy on AWS EC2 (Automated)</h3>
+            <div class="code-block">
+                <code># On your EC2 instance
+wget https://raw.githubusercontent.com/sadanandkonapur/two-tier-devops-project/main/deploy-aws.sh
+chmod +x deploy-aws.sh
+./deploy-aws.sh
+
+# Access at http://your-ec2-ip:5000</code>
+            </div>
+            
+            <h2>📚 Documentation</h2>
+            <div class="buttons">
+                <a href="https://github.com/sadanandkonapur/two-tier-devops-project" class="btn btn-primary" target="_blank">
+                    📂 View Source Code
+                </a>
+                <a href="https://github.com/sadanandkonapur/two-tier-devops-project/blob/main/README.md" class="btn btn-secondary" target="_blank">
+                    📖 Read Documentation
+                </a>
+                <a href="https://github.com/sadanandkonapur/two-tier-devops-project/blob/main/DEPLOYMENT.md" class="btn btn-outline" target="_blank">
+                    🚀 Deployment Guide
+                </a>
+            </div>
+            
+            <h2>📦 What's Included</h2>
+            <ul style="line-height: 2;">
+                <li>✅ Flask web application with REST API</li>
+                <li>✅ Responsive web interface</li>
+                <li>✅ Dockerfile for containerization</li>
+                <li>✅ Docker Compose for orchestration</li>
+                <li>✅ Jenkins CI/CD pipeline (Jenkinsfile)</li>
+                <li>✅ Database initialization scripts</li>
+                <li>✅ Automated deployment scripts for AWS</li>
+                <li>✅ Production setup with Nginx & SSL</li>
+                <li>✅ Comprehensive documentation</li>
+                <li>✅ Health check endpoints</li>
+            </ul>
+            
+            <h2>🎯 Use Cases</h2>
+            <ul style="line-height: 2;">
+                <li>🎓 Learning DevOps practices</li>
+                <li>💼 Portfolio project demonstration</li>
+                <li>🏢 Template for microservices architecture</li>
+                <li>🔧 Foundation for production applications</li>
+                <li>📊 CI/CD pipeline reference implementation</li>
+            </ul>
+            
+            <div class="alert">
+                <div class="alert-title">🎬 Ready to Deploy?</div>
+                <p>Follow the <a href="https://github.com/sadanandkonapur/two-tier-devops-project/blob/main/DEPLOYMENT.md" target="_blank">Deployment Guide</a> for step-by-step instructions on deploying to AWS EC2, Azure, or any cloud platform.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Made with ❤️ for DevOps Engineers</p>
+            <p>
+                <a href="https://github.com/sadanandkonapur/two-tier-devops-project" style="color: white; text-decoration: none;">
+                    View on GitHub ⭐
+                </a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
